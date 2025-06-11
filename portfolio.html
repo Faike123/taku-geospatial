@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Taku</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1 class="logo">Taku</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="data.html">Data</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      <h2>Project Portfolio</h2>
+      <p>Explore selected projects organized by service category. More will be added soon.</p>
+  
+      <!-- 1. Remote Sensing -->
+      <section class="portfolio-category">
+        <h3>🛰️ Remote Sensing & Earth Observation</h3>
+        <div class="portfolio-grid">
+          <div class="project-card" onclick="openModal('modal1')">
+            <img src="../assets/images/project1_thumb.jpg" alt="LiDAR Terrain Modelling" />
+            <div class="project-info">
+              <h3>LiDAR Terrain Modelling</h3>
+              <p><strong>Data:</strong> Drone LiDAR</p>
+              <p><strong>Software:</strong> CloudCompare, QGIS</p>
+              <p><strong>Techniques:</strong> DEM, Hillshade</p>
+              <p><strong>Output:</strong> Terrain Models</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- 2. GIS & Spatial Analysis -->
+      <section class="portfolio-category">
+        <h3>🗺️ GIS & Spatial Analysis</h3>
+        <div class="portfolio-grid">
+          <div class="project-card" onclick="openModal('modal2')">
+            <img src="../assets/images/project2_thumb.jpg" alt="Offshore Wind Mapping" />
+            <div class="project-info">
+              <h3>Offshore Wind Mapping</h3>
+              <p><strong>Data:</strong> Bathymetry, Wind, Seabed</p>
+              <p><strong>Software:</strong> ArcMap</p>
+              <p><strong>Techniques:</strong> Suitability Analysis</p>
+              <p><strong>Output:</strong> GIS Maps</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- 3. Data Cleaning & Management -->
+      <section class="portfolio-category">
+        <h3>🧹 Data Cleaning & Management</h3>
+        <div class="portfolio-grid">
+          <!-- No projects yet -->
+        </div>
+      </section>
+  
+      <!-- 4. Custom Tool Development -->
+      <section class="portfolio-category">
+        <h3>💻 Custom Tool Development</h3>
+        <div class="portfolio-grid">
+          <!-- No projects yet -->
+        </div>
+      </section>
+  
+      <!-- 5. Visualization & Reporting -->
+      <section class="portfolio-category">
+        <h3>📊 Visualization & Reporting</h3>
+        <div class="portfolio-grid">
+          <!-- No projects yet -->
+        </div>
+      </section>
+  
+      <!-- 6. Specialized Applications -->
+      <section class="portfolio-category">
+        <h3>🌐 Specialized Applications</h3>
+        <div class="portfolio-grid">
+          <div class="project-card" onclick="openModal('modal3')">
+            <img src="../assets/images/project3_thumb.jpg" alt="Mars Crater Profiling" />
+            <div class="project-info">
+              <h3>Mars Crater Profiling</h3>
+              <p><strong>Data:</strong> LOLA, GRAIL</p>
+              <p><strong>Software:</strong> JMARS, ArcMap</p>
+              <p><strong>Techniques:</strong> Morphometric Analysis</p>
+              <p><strong>Output:</strong> Crater Charts</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Modals -->
+      <div class="modal" id="modal1">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal1')">&times;</span>
+          <h3>LiDAR Terrain Modelling</h3>
+          <p>Drone-collected LiDAR used to generate high-resolution terrain models with slope analysis in QGIS.</p>
+          <div class="modal-images">
+            <img src="../assets/images/project1_1.jpg" />
+            <img src="../assets/images/project1_2.jpg" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="modal" id="modal2">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <h3>Offshore Wind Mapping</h3>
+          <p>Multi-criteria GIS analysis integrating seabed, bathymetry and wind data for site selection.</p>
+          <div class="modal-images">
+            <img src="../assets/images/project2_1.jpg" />
+            <img src="../assets/images/project2_2.jpg" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="modal" id="modal3">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal3')">&times;</span>
+          <h3>Mars Crater Profiling</h3>
+          <p>Mapped crater dimensions and gravity profiles using LOLA and GRAIL datasets with morphometric tools.</p>
+          <div class="modal-images">
+            <img src="../assets/images/project3_1.jpg" />
+            <img src="../assets/images/project3_2.jpg" />
+          </div>
+        </div>
+      </div>
+  
+    </section>
+  </main>
+  
+  
+
+  <footer>
+    <p>&copy; 2025 Taku. All rights reserved.</p>
+  </footer>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+</script>
+</body>
+</html>

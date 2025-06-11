@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Library</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .data-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .data-filters button {
+      padding: 0.5rem 1rem;
+      background: #eee;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .data-filters button:hover {
+      background: #ddd;
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .data-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .data-card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .data-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #0066cc;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .file-type {
+      font-size: 0.85rem;
+      color: #555;
+      font-weight: normal;
+      margin-left: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1 class="logo">Taku</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="data.html">Data</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      <h2>Data Library</h2>
+      <p>Click a filter to view specific types of downloadable data.</p>
+
+      <!-- Filter buttons -->
+      <div class="data-filters">
+        <button onclick="filterData('all')">All</button>
+        <button onclick="filterData('gis')">GIS</button>
+        <button onclick="filterData('tables')">Tables</button>
+        <button onclick="filterData('imagery')">Imagery</button>
+        <button onclick="filterData('videos')">Videos</button>
+        <button onclick="filterData('packages')">Packages</button>
+        <button onclick="filterData('docs')">Docs</button>
+      </div>
+
+      <!-- Data entries -->
+      <div class="data-grid">
+        <div class="data-card" data-type="gis">
+          <h3>Wind Zones (GIS)</h3>
+          <p>Multi-criteria wind zoning shapefiles (Scotland).</p>
+          <a href="../assets/data/windzones.zip" download>
+            ⬇ Download <span class="file-type">[ZIP / SHP]</span>
+          </a>
+        </div>
+
+        <div class="data-card" data-type="tables">
+          <h3>Mars Crater Profiles</h3>
+          <p>Crater morphometry data in CSV format.</p>
+          <a href="../assets/data/mars_craters.csv" download>
+            ⬇ Download <span class="file-type">[CSV]</span>
+          </a>
+        </div>
+
+        <div class="data-card" data-type="imagery">
+          <h3>NDVI Map (Landsat)</h3>
+          <p>Normalized Difference Vegetation Index visualisation.</p>
+          <a href="../assets/images/ndvi_map.png" download>
+            ⬇ Download <span class="file-type">[PNG]</span>
+          </a>
+        </div>
+
+        <div class="data-card" data-type="videos">
+          <h3>Drone Terrain Survey</h3>
+          <p>Video from fieldwork in the Highlands (MP4).</p>
+          <a href="../assets/videos/survey.mp4" download>
+            ⬇ Download <span class="file-type">[MP4]</span>
+          </a>
+        </div>
+
+        <div class="data-card" data-type="packages">
+          <h3>Mars Mapping Toolkit</h3>
+          <p>Toolkit: GeoTIFF DEMs, CSVs, and project files.</p>
+          <a href="../assets/data/mars_toolkit.zip" download>
+            ⬇ Download <span class="file-type">[ZIP / GeoTIFF]</span>
+          </a>
+        </div>
+
+        <div class="data-card" data-type="docs">
+          <h3>Glencoe Field Report</h3>
+          <p>PDF with field maps and notes.</p>
+          <a href="../assets/docs/glencoe_report.pdf" download>
+            ⬇ Download <span class="file-type">[PDF]</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Taku. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function filterData(type) {
+      const cards = document.querySelectorAll('.data-card');
+      cards.forEach(card => {
+        const cardType = card.getAttribute('data-type');
+        if (type === 'all' || cardType === type) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
